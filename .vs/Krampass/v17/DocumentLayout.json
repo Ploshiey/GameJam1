@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\maxke\\source\\repos\\GameJam1\\Krampass\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F48913E3-FF6A-5B18-9290-090A4E5077DF}|Assembly-CSharp.csproj|c:\\users\\maxke\\source\\repos\\gamejam1\\krampass\\assets\\scripts\\placescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F48913E3-FF6A-5B18-9290-090A4E5077DF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\placescript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlaceScript.cs",
+              "DocumentMoniker": "C:\\Users\\maxke\\source\\repos\\GameJam1\\Krampass\\Assets\\Scripts\\PlaceScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlaceScript.cs",
+              "ToolTip": "C:\\Users\\maxke\\source\\repos\\GameJam1\\Krampass\\Assets\\Scripts\\PlaceScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlaceScript.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T07:44:11.273Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
