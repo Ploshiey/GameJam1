@@ -16,9 +16,14 @@ public class PlaceScript : MonoBehaviour
     public GameObject rightPiece;
     public GameObject intersectionPiece;
     public GameObject stopPiece;
+
+    private GameObject[][] track;
+    private GameObject newest;
+    private GameObject oldNewest = null;
+    private GameObject oldestNewest;
     void Start()
     {
-        
+        for (int i = 0; i < track.Length; i++) {
     }
 
     void Update()
@@ -28,7 +33,7 @@ public class PlaceScript : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         mouseX = mousePos.x;
         mouseY = mousePos.y;
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -36,11 +41,23 @@ public class PlaceScript : MonoBehaviour
             {
                 if (hit.rigidbody == tablerb)
                 {
-                    if (Input.GetKey(KeyCode.Mouse0))
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         if((mouseX <= xBounds + 0.5f || -mouseX >= -xBounds - 0.5f) && (mouseY <= yBounds + 0.5f || -mouseY >= -yBounds - 0.5f))
                         {
-                            Instantiate(straightPiece, new Vector3(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y), mousePos.z), Quaternion.Euler(270f,0,0));
+                            track[Mathf.RoundToInt(mousePos.x)][Mathf.RoundToInt(mousePos.y)] = Instantiate(straightPiece, new Vector3(Mathf.Round(mousePos.x), Mathf.Round(mousePos.y), mousePos.z), Quaternion.Euler(270f,0,0));
+                            if (newest.transform.position.y - 1 == oldNewest.transform.position.y)
+                            {
+                                var temp = oldNewest;
+                                oldNewest = Instantiate(leftPiece, new Vector3(oldNewest.transform.position.x, oldNewest.transform.position.y, oldNewest.transform.position.z), Quaternion.Euler(270f, 0, 0));
+                                Destroy(temp.gameObject);
+                            }
+                            else if (newest.transform.position.y + 1 == oldNewest.transform.position.y)
+                            {
+                                var temp = oldNewest;
+                                oldNewest = Instantiate(rightPiece, new Vector3(oldNewest.transform.position.x, oldNewest.transform.position.y, oldNewest.transform.position.z), Quaternion.Euler(270f, 0, 0));
+                                Destroy(temp.gameObject);
+                            }
                         }
                     }
                 }
